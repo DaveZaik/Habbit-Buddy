@@ -82,7 +82,7 @@ def signin():
         return redirect("/profile")
     # If the request method is GET, render the login page
     else:
-     return render_template("account.html", active_page="login", form_type="login")
+     return render_template("account.html",  active_page="login", form_type="login")
 # clear the session
 @app.route("/profile")
 def profile():
