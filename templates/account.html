@@ -4,8 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- <link rel="stylesheet" href="/static/css/signup.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/static/js/signup.js"></script>
+
 </head>
-<body>
+<style>
+          body {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
+        }
+        .form-container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .login-form,
+    .signup-form {
+        display: block;
+    }
+
+    .slide-up {
+        height: 0;
+        overflow: hidden;
+    }
+       
     
+</style>
+<body>
+
+    <div class="container-fluid">
+       
+    {% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-6 form-container">
+               
+               
+                {% if form_type == "signup" %}
+                <div class="signup">
+                    <h2 style="color:green">{{message}}</h2>
+                    <h2 style="color:red">{{error}}</h2>
+                    <form action="/signup" method="post" class="signup-form" >
+                        <h2 class="mb-4">SIGN UP</h2>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                        <label for="username" class="form-label">UserName</label>
+                        <input type="text" class="form-control" id="username" placeholder="Your UserName ">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                     <input type="password" class="form-control"id="password" rows="3" placeholder="Your Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmpass" class="form-label"> Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmpass" rows="3" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <a href="{{ url_for('signin') }}" class="toggle-form toggle-login"  ">Have you not signed up? </a>
+                    </div>
+                </form>
+            </div>
+                
+                
+                <div class="center">
+                    <h2 style="color:green">{{message}}</h2>
+                    <h2 style="color:red">{{error}}</h2>
+                    {% elif form_type == "login" %}
+                    <form action="/login" method="post" class="login-form slide-up" >
+                        <div class="mb-3">
+                            <label for="username" class="form-label" >UserName</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control"id="password" rows="3" placeholder="Your Password">
+                        </div>
+                        <button type="submit" class="submit-btn">Log in</button>
+                        <div class="mb-3">
+                            <a href="{{ url_for('signup') }}" class="toggle-form toggle-signup ">Have you already signed up?</a>
+                        </div>
+                    </form>
+                </div>
+                    
+                    {% endif %}
+                </d iv>
+                
+            <div class="col-md-4 col-lg-6">
+                <img src="/static/images/saiyan (1).png" alt="" class="img-fluid" style="max-height: 600px;;">
+            </div>
+            
+        </div>
+    </div>
+    {% endblock %}
+    </div>
 </body>
 </html>

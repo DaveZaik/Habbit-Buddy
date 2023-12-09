@@ -14,7 +14,7 @@ html, body {
   background-color: #222;
   border-radius: 15px;
   height: 550px;
-  width: 350px;
+  width: 450px;
   position: relative;
   overflow: hidden;
 }
@@ -29,7 +29,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 500px;
-  background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf884ad570b50659c5fa2dc2cfb20ecf&auto=format&fit=crop&w=1000&q=100');
+  background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.digitaltrends.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fpapers-co-nn89-wood-mountain-nature-red-night-33-iphone6-wallpaper.jpg%3Ffit%3D250%252C444%26p%3D1&tbnid=4R6L_QnECIZqoM&vet=12ahUKEwju1vCIqf6CAxVqnCcCHfm5BFMQMygTegUIARCfAQ..i&imgrefurl=https%3A%2F%2Fwww.digitaltrends.com%2Fmobile%2Fbest-iphone-wallpapers%2F&docid=Y58_rHIh7ZfChM&w=250&h=444&q=nice%20backgrounds&hl=en&ved=2ahUKEwju1vCIqf6CAxVqnCcCHfm5BFMQMygTegUIARCfAQ');
 }
 .form-structor .signup {
   position: absolute;

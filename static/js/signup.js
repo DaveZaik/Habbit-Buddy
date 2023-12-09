@@ -1,28 +1,14 @@
-console.clear();
+document.addEventListener("DOMContentLoaded", function () {
+    const signupForm = document.querySelector(".signup-form");
+    const loginForm = document.querySelector(".login-form");
 
-const loginBtn = document.getElementById('login');
-const signupBtn = document.getElementById('signup');
+    document.querySelector(".toggle-signup").addEventListener("click", function () {
+        signupForm.classList.remove("slide-up");
+        loginForm.classList.add("slide-up");
+    });
 
-loginBtn.addEventListener('click', (e) => {
-	let parent = e.target.parentNode.parentNode;
-	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			signupBtn.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
-	});
-});
-
-signupBtn.addEventListener('click', (e) => {
-	let parent = e.target.parentNode;
-	Array.from(e.target.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			loginBtn.parentNode.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
-	});
+    document.querySelector(".toggle-login").addEventListener("click", function () {
+        loginForm.classList.remove("slide-up");
+        signupForm.classList.add("slide-up");
+    });
 });

@@ -6,6 +6,56 @@
     <title>Habbit-Buddy</title>
     <link rel="stylesheet" href="/static/css/bootstrap.css">
     <script src="/static/js/bootstrap.js"></script>
+    <style>
+        .colrow{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+}
+.coli-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.coli-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.coli-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btnn{
+    display: inline-block;
+    background: #ffb13b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 0px 20;
+    border-radius: 30px;
+    transition:  background 0.5s;
+   
+    text-align: center;
+    
+}
+.btnn:hover{
+    background: #cf0606;
+}
+
+
+.header{
+    background:radial-gradient( #fff,rgb(12, 144, 221));
+}
+
+@media only screen and (max-width:600px){
+    .colrow{
+        text-align: center;
+    }
+    .coli-2{
+        flex-basis: 100%}
+    }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -19,7 +69,7 @@
 <div class=" navbar-collapse " id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="index.html" class="nav-link active">Home</a>
+            <a href="{{ url_for('home') }}" class="nav-link active">Home</a>
         </li>
         <li class="nav-item">
             <a href="index.html" class="nav-link ">Habits</a>
@@ -28,27 +78,93 @@
             <a href="index.html" class="nav-link "> Progress- Jounaling</a>
         </li>
         <li class="nav-item">
-            <a href="index.html" class="nav-link ">Checklist</a>
+            <a href="" class="nav-link ">Checklist</a>
         </li>
         <li class="nav-item">
-            <a href="index.html" class="nav-link ">Account</a>
+            <a href="{{ url_for('signup') }}" class="nav-link ">Account</a>
         
         </li>
 
     </ul>
 </div>
 </nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6  d-flex align-items-center justify-content-center">
-    <h2 class="text-center">Crafting Better Habits, Creating Better You: Habbit Buddy Leads the Way</h2>
+<div class="container-fluid header">
+    <div class="colrow " >
+        <div class="coli-2 ">
+    <h1 class="text-center">Crafting Better Habits, Creating Better You: Habbit Buddy Leads the Way</h1>
+  <a href=""><button class="btnn" type="button">Get Started &#x2192;</button></a>
         </div>
-        <div class="col-sm-6 align-items-center justify-content-center">
-           <img  class="img-fluid" src="/static/images/saiyan (1).png" alt="" width="300"> 
+        <div class="coli-2 align-items-center justify-content-center">
+           <img  class="img-fluid" src="/static/images/saiyan (3).png" alt="" width="300"> 
         </div>
     </div>
+    
 </div>
 
+</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">OUR SERVICES</h2>
+
+    <div class="carousel slide carousel-fade " id="carouselEx" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/images/journaling.avif" alt="" class=" img-fluid d-block mx-auto " style="max-height: 650px;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/check.avif" alt="" class="img-fluid d-block mx-auto" style="max-height: 650px;" >
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/improv.png" alt="" class="img-fluid d-block  mx-auto" style="max-height: 700px;">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/habits.jpg" alt="" class="img-fluid d-block mx-auto" style="max-height: 650px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselex" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselEx"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Testimonials</h2>
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="/static/images/testi1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">David thaiku</h5>
+                  <p class="card-text">Habbit Buddy really helmed me get my life straght ,enough to make a clear goal and get rid of my bad habbits.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="/static/images/testi3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Maureen Kihiu</h5>
+                  <p class="card-text">Habbit Buddy has really helped me grow as not only a person but as somone i can be proud of .</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="/static/images/testi2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dennis Opppa</h5>
+                  <p class="card-text">A man is somone who is dosent run away fom his responsibilities ad im entitiled to be responsible to myself
+                    .</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+    </div>
 </div>
 
 </body>
